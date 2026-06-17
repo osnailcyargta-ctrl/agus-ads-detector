@@ -128,7 +128,7 @@ class BluetoothService : Service() {
         val notif = NotificationCompat.Builder(this, CHANNEL_AD)
             .setSmallIcon(android.R.drawable.ic_dialog_alert)
             .setContentTitle("⚠️ IKLAN TERDETEKSI!")
-            .setContentText("$appName – "$trigger"")
+            .setContentText("$appName - [$trigger]")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .setVibrate(longArrayOf(0, 500, 100, 500))

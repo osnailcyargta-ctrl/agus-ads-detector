@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agus Ads Detector</string>
+    <string name="accessibility_service_label">Agus Ad Detector</string>
+    <string name="accessibility_description">Detects ads in foreground apps to notify your other device via Bluetooth</string>
+    <string name="mode_monitor">📡 Monitor (HP ini detect iklan)</string>
+    <string name="mode_receiver">🔔 Receiver (HP ini terima notif)</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
+    <string name="btn_scan">Scan Bluetooth</string>
+    <string name="status_idle">Idle</string>
+    <string name="status_connecting">Connecting...</string>
+    <string name="status_connected">Connected ✅</string>
+    <string name="status_disconnected">Disconnected ❌</string>
+    <string name="notif_channel_bt">Bluetooth Service</string>
+    <string name="notif_channel_ad">Ad Alert</string>
+    <string name="ad_detected_notif_title">⚠️ IKLAN TERDETEKSI!</string>
+    <string name="ad_detected_notif_text">HP lain lagi kena iklan, buruan cek!</string>
+</resources>

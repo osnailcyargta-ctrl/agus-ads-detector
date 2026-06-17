@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎯 Agus Ads Detector"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:paddingVertical="16dp"/>
+
+        <!-- Mode Selection Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1E1E1E"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilih Mode:"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rbMonitor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode_monitor"
+                    android:textColor="#FFFFFF"
+                    android:buttonTint="#FF6B35"
+                    android:checked="true"
+                    android:padding="8dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbReceiver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode_receiver"
+                    android:textColor="#FFFFFF"
+                    android:buttonTint="#FF6B35"
+                    android:padding="8dp"/>
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Bluetooth Device Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1E1E1E"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Perangkat Bluetooth:"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnScan"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="🔍 Scan Paired Devices"
+                android:backgroundTint="#2A2A2A"
+                android:textColor="#FF6B35"
+                android:layout_marginBottom="8dp"/>
+
+            <ListView
+                android:id="@+id/lvDevices"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#2A2A2A"
+                android:divider="#333333"
+                android:dividerHeight="1dp"/>
+
+            <TextView
+                android:id="@+id/tvSelectedDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Belum pilih device"
+                android:textColor="#777777"
+                android:textSize="12sp"
+                android:paddingTop="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1E1E1E"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status:"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Idle"
+                android:textColor="#FFD166"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#777777"
+                android:textSize="11sp"
+                android:paddingTop="8dp"
+                android:fontFamily="monospace"/>
+
+        </LinearLayout>
+
+        <!-- Ad Keywords Card (Monitor only) -->
+        <LinearLayout
+            android:id="@+id/cardKeywords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1E1E1E"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keyword Iklan (pisah koma):"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/etKeywords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Skip Ad,Close Ad,Watch Ad,Tutup,Skip,Lewati,Iklan,Advertisement,AdMob"
+                android:textColor="#FFFFFF"
+                android:background="#2A2A2A"
+                android:padding="12dp"
+                android:textSize="12sp"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <!-- Accessibility Permission Warning -->
+        <LinearLayout
+            android:id="@+id/cardAccessibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#2A1A00"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠️ Accessibility Service belum aktif!"
+                android:textColor="#FFD166"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnOpenAccessibility"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Buka Settings Accessibility"
+                android:backgroundTint="#FF6B35"/>
+
+        </LinearLayout>
+
+        <!-- Start/Stop Button -->
+        <Button
+            android:id="@+id/btnStartStop"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="▶ START"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FF6B35"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
